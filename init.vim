@@ -18,34 +18,30 @@ set termguicolors
 set signcolumn=yes
 set colorcolumn=85
 
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
 call plug#begin('~/.vim/plugged')
 
-Plug 'gruvbox-community/gruvbox'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'preservim/nerdtree'
-Plug 'davidhalter/jedi-vim'
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tmhedberg/SimpylFold'
+    Plug 'gruvbox-community/gruvbox'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'preservim/nerdtree'
+    Plug 'davidhalter/jedi-vim'
+    Plug 'deoplete-plugins/deoplete-jedi'
+    Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'tmhedberg/SimpylFold'
 
-let g:deoplete#enable_at_startup = 1
+    let g:deoplete#enable_at_startup = 1
 
 call plug#end()
 
 colorscheme gruvbox
+
 let mapleader = " "
 
-" NERDTree maps
-nnoremap <leader>nf :NERDTreeFocus<cr>
-nnoremap <leader>nn :NERDTree<cr>
-nnoremap <leader>nt :NERDTreeToggle<cr>
-nnoremap <leader>ns :NERDTreeFind<cr>
+" Tab scrolls autocomplete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Tab switching
 nnoremap <leader>tt :tabnew<Enter>
@@ -57,6 +53,11 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" NERDTree maps
+nnoremap <leader>nf :NERDTreeFocus<cr>
+nnoremap <leader>nn :NERDTreeToggle<cr>
+nnoremap <leader>ns :NERDTreeFind<cr>
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
