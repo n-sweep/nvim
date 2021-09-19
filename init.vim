@@ -43,6 +43,9 @@ let mapleader = " "
 " Tab scrolls autocomplete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
+" Quick Write
+nnoremap <leader>w :w<Enter>
+
 " Tab switching
 nnoremap <leader>tt :tabnew<Enter>
 nnoremap <leader>tn gt
@@ -55,8 +58,9 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " NERDTree maps
-nnoremap <leader>nf :NERDTreeFocus<cr>
+nnoremap <leader>no :NERDTree<Space>
 nnoremap <leader>nn :NERDTreeToggle<cr>
+nnoremap <leader>nf :NERDTreeFocus<cr>
 nnoremap <leader>ns :NERDTreeFind<cr>
 
 " Find files using Telescope command-line sugar.
