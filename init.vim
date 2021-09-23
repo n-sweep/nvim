@@ -18,19 +18,29 @@ set termguicolors
 set signcolumn=yes
 set colorcolumn=85
 
+" Install vim-plug
+" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+"       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 call plug#begin('~/.vim/plugged')
 
-    Plug 'gruvbox-community/gruvbox'
-    Plug 'nvim-lua/plenary.nvim'
+    " Telescope requires neovim 0.5+
+    " sudo add-apt-repository ppa:neovim-ppa/unstable
+    " sudo apt-get update
+    " sudo apt-get install neovim
     Plug 'nvim-telescope/telescope.nvim'
-    Plug 'preservim/nerdtree'
+
+    " pip install jedi pynvim
     Plug 'davidhalter/jedi-vim'
     Plug 'deoplete-plugins/deoplete-jedi'
     Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+
+    Plug 'preservim/nerdtree'
     Plug 'jiangmiao/auto-pairs'
     Plug 'tmhedberg/SimpylFold'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'gruvbox-community/gruvbox'
 
     let g:deoplete#enable_at_startup = 1
 
